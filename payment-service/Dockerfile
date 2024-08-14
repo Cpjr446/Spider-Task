@@ -1,13 +1,15 @@
-FROM node:20.9.0-alpine
+# Dockerfile for Payment Service
+FROM node:18
 
-WORKDIR /spider-task/product-service
+# Create app directory
+WORKDIR /Spider-Task/payment-service
 
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install
 
 COPY . .
 
 EXPOSE 3001
 
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
