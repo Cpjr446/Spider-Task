@@ -1,13 +1,14 @@
-FROM node:20.9.0-alpine
+# Dockerfile for Ride Service
+FROM node:18
 
-WORKDIR /spider-task/product-service
+# Working directory
+WORKDIR /Spider-Task/ride-service
 
 COPY package*.json ./
-
-RUN npm install 
+RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3002
 
-CMD ["node", "server.js"]
+CMD ["node", "index.js"]
